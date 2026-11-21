@@ -13,6 +13,8 @@ import RequestsPage from './pages/RequestsPage';
 import SessionsPage from './pages/SessionsPage';
 import SessionRoomPage from './pages/SessionRoomPage';
 import RecordingsPage from './pages/RecordingsPage';
+import ProjectsPage from './pages/ProjectsPage';
+import ProjectDetailPage from './pages/ProjectDetailPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 export default function App() {
@@ -36,6 +38,8 @@ export default function App() {
           <Route path="/requests" element={<RequestsPage />} />
           <Route path="/sessions" element={<SessionsPage />} />
           <Route path="/recordings" element={<RecordingsPage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/projects/:projectId" element={<ProjectDetailPage />} />
           <Route path="/users/:userId" element={<PublicProfilePage />} />
         </Route>
       </Route>

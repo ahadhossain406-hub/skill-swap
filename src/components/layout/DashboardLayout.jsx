@@ -3,6 +3,7 @@ import {
   CalendarDays,
   Compass,
   Film,
+  FolderKanban,
   Handshake,
   Inbox,
   LayoutDashboard,
@@ -24,6 +25,7 @@ const navItems = [
   { to: '/requests', label: 'Requests', icon: Inbox, showBadge: true },
   { to: '/sessions', label: 'Sessions', icon: CalendarDays },
   { to: '/recordings', label: 'Recordings', icon: Film },
+  { to: '/projects', label: 'Projects', icon: FolderKanban },
   { to: '/profile', label: 'My Profile', icon: User },
 ];
 
