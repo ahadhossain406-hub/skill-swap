@@ -67,3 +67,24 @@ export async function getCurrentUser() {
   const user = loadUsers().find((u) => u.id === id);
   return user ? withoutPassword(user) : null;
 }
+
+export async function updateUser(userId, updates) {
+  const users = loadUsers();
+  const index = users.findIndex((u) => u.id === userId);
+  if (index === -1) throw new Error('User not found.');
+
+  // Profile page theke shudhu ei field gulo change kora jabe.
+  // id, email, password, role kokhono change hobe na.
+  const allowedFields = ['name', 'bio', 'location', 'teaches', 'learns'];
+  const safeUpdates = {};
+  allowedFields.forEach((field) => {
+    if (field in updates) safeUpdates[field] = updates[field];
+  });
+
+  const updatedUser = { ...users[index], ...safeUpdates };
+  const newUsers = [...users];
+  newUsers[index] = updatedUser;
+  setItem(STORAGE_KEYS.USERS, newUsers);
+
+  return withoutPassword(updatedUser);
+}

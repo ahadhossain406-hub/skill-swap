@@ -7,7 +7,6 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // On page refresh, check if someone is already logged in.
   useEffect(() => {
     authService
       .getCurrentUser()
@@ -32,8 +31,14 @@ export function AuthProvider({ children }) {
     setUser(null);
   };
 
+  const updateProfile = async (updates) => {
+    const updatedUser = await authService.updateUser(user.id, updates);
+    setUser(updatedUser);
+    return updatedUser;
+  };
+
   return (
-    <AuthContext.Provider value={{ user, loading, login, register, logout }}>
+    <AuthContext.Provider value={{ user, loading, login, register, logout, updateProfile }}>
       {children}
     </AuthContext.Provider>
   );

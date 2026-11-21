@@ -44,8 +44,8 @@ export default function RegisterPage() {
     setSubmitting(true);
     try {
       await register({ name: form.name, email: form.email, password: form.password });
-      showToast('Account created! Welcome to SkillSwap.');
-      navigate('/dashboard', { replace: true });
+        showToast('Account created! Now add your skills.');
+        navigate('/profile', { replace: true });
     } catch (error) {
       setErrors({ form: error.message });
     } finally {

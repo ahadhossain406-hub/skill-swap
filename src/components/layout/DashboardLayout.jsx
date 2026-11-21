@@ -1,13 +1,16 @@
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
-import { LayoutDashboard, LogOut } from 'lucide-react';
+import { LayoutDashboard, LogOut, User } from 'lucide-react';
 import Logo from '../common/Logo';
 import Avatar from '../common/Avatar';
 import Button from '../common/Button';
 import { useAuth } from '../../context/AuthContext';
 import { useToast } from '../../context/ToastContext';
 
-// We will add more items here as we build more pages.
-const navItems = [{ to: '/dashboard', label: 'Dashboard', icon: LayoutDashboard }];
+// Sidebar-er menu. Notun page add korle ekhane ekta line jorbo.
+const navItems = [
+  { to: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
+  { to: '/profile', label: 'My Profile', icon: User },
+];
 
 export default function DashboardLayout() {
   const { user, logout } = useAuth();
