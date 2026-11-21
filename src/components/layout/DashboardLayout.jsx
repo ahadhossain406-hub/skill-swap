@@ -2,6 +2,7 @@ import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import {
   CalendarDays,
   Compass,
+  Film,
   Handshake,
   Inbox,
   LayoutDashboard,
@@ -22,6 +23,7 @@ const navItems = [
   { to: '/matches', label: 'My Matches', icon: Handshake },
   { to: '/requests', label: 'Requests', icon: Inbox, showBadge: true },
   { to: '/sessions', label: 'Sessions', icon: CalendarDays },
+  { to: '/recordings', label: 'Recordings', icon: Film },
   { to: '/profile', label: 'My Profile', icon: User },
 ];
 

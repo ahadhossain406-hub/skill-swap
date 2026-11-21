@@ -11,6 +11,8 @@ import MatchesPage from './pages/MatchesPage';
 import PublicProfilePage from './pages/PublicProfilePage';
 import RequestsPage from './pages/RequestsPage';
 import SessionsPage from './pages/SessionsPage';
+import SessionRoomPage from './pages/SessionRoomPage';
+import RecordingsPage from './pages/RecordingsPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 export default function App() {
@@ -23,6 +25,9 @@ export default function App() {
 
       {/* Logged-in routes */}
       <Route element={<ProtectedRoute />}>
+        {/* Full-screen video room (sidebar chhara) */}
+        <Route path="/sessions/:sessionId/room" element={<SessionRoomPage />} />
+
         <Route element={<DashboardLayout />}>
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/profile" element={<ProfilePage />} />
@@ -30,6 +35,7 @@ export default function App() {
           <Route path="/matches" element={<MatchesPage />} />
           <Route path="/requests" element={<RequestsPage />} />
           <Route path="/sessions" element={<SessionsPage />} />
+          <Route path="/recordings" element={<RecordingsPage />} />
           <Route path="/users/:userId" element={<PublicProfilePage />} />
         </Route>
       </Route>

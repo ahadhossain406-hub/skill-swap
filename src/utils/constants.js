@@ -3,6 +3,7 @@ export const STORAGE_KEYS = {
   CURRENT_USER_ID: 'skillswap_current_user_id',
   REQUESTS: 'skillswap_requests',
   SESSIONS: 'skillswap_sessions',
+  RECORDINGS: 'skillswap_recordings',
 };
 
 export const SKILL_LEVELS = ['Beginner', 'Intermediate', 'Advanced'];

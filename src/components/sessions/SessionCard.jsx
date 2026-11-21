@@ -103,6 +103,15 @@ export default function SessionCard({ session, partner, myId, onComplete, onCanc
 
       {isScheduled && (
         <div className="mt-4 flex flex-wrap gap-2">
+                    {session.mode === 'online' && (
+            <Link
+              to={`/sessions/${session.id}/room`}
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-green-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-green-700"
+            >
+              <Video className="h-4 w-4" />
+              Join room
+            </Link>
+          )}
           <Button disabled={busy} onClick={() => run(onComplete, 'Mark this session as completed?')}>
             Mark completed
           </Button>
