@@ -1,0 +1,43 @@
+// Learner teacher-ke review dey. revieweeId = je shekhiyeche, reviewerId = je shikheche.
+export const mockReviews = [
+  {
+    id: 1,
+    sessionId: 3,
+    reviewerId: 8,
+    revieweeId: 1,
+    skillId: 2,
+    rating: 5,
+    comment: 'Ayesha explained the Illustrator tools very clearly. I learned a lot in one hour!',
+    createdAt: '2026-11-17T18:00:00.000Z',
+  },
+  {
+    id: 2,
+    sessionId: 9001,
+    reviewerId: 3,
+    revieweeId: 2,
+    skillId: 5,
+    rating: 5,
+    comment: 'Tanvir is patient and builds real examples while teaching. Highly recommended.',
+    createdAt: '2026-10-20T12:00:00.000Z',
+  },
+  {
+    id: 3,
+    sessionId: 9002,
+    reviewerId: 7,
+    revieweeId: 2,
+    skillId: 6,
+    rating: 4,
+    comment: 'Good session. A few more practice problems would have been nice.',
+    createdAt: '2026-10-28T15:30:00.000Z',
+  },
+  {
+    id: 4,
+    sessionId: 9003,
+    reviewerId: 1,
+    revieweeId: 8,
+    skillId: 6,
+    rating: 5,
+    comment: 'Mehedi made Python feel easy. Great teacher!',
+    createdAt: '2026-10-30T10:00:00.000Z',
+  },
+];

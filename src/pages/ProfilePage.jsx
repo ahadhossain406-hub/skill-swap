@@ -5,6 +5,7 @@ import Button from '../components/common/Button';
 import SkillTag from '../components/skills/SkillTag';
 import AddSkillModal from '../components/skills/AddSkillModal';
 import EditProfileModal from '../components/profile/EditProfileModal';
+import ProfileActivity from '../components/profile/ProfileActivity';
 import { useAuth } from '../context/AuthContext';
 import { useSkills } from '../context/SkillsContext';
 import { useToast } from '../context/ToastContext';
@@ -155,6 +156,8 @@ export default function ProfilePage() {
           />
         ))}
       </SkillSection>
+
+      <ProfileActivity userId={user.id} />
 
       {editing && (
         <EditProfileModal user={user} onSave={saveProfile} onClose={() => setEditing(false)} />

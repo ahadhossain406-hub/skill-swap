@@ -4,11 +4,13 @@ import { ArrowLeft, BookOpen, GraduationCap, MapPin, Sparkles } from 'lucide-rea
 import Avatar from '../components/common/Avatar';
 import SkillTag from '../components/skills/SkillTag';
 import EmptyState from '../components/common/EmptyState';
+import SendRequestButton from '../components/requests/SendRequestButton';
+import ProfileActivity from '../components/profile/ProfileActivity';
 import * as userService from '../services/userService';
 import { useAuth } from '../context/AuthContext';
 import { useSkills } from '../context/SkillsContext';
 import { getMatchInfo } from '../utils/matchingAlgorithm';
-import SendRequestButton from '../components/requests/SendRequestButton';
+
 export default function PublicProfilePage() {
   const { userId } = useParams(); // URL theke /users/:userId er userId
   const id = Number(userId);
@@ -79,8 +81,8 @@ export default function PublicProfilePage() {
         <p className="mt-4 text-slate-700">{profile.bio || 'This user has not written a bio yet.'}</p>
         <div className="mt-4">
           <SendRequestButton targetUser={profile} />
-        </div>      
-        </section>
+        </div>
+      </section>
 
       <section
         className={`rounded-2xl border p-6 ${
@@ -153,6 +155,8 @@ export default function PublicProfilePage() {
           </div>
         </section>
       </div>
+
+      <ProfileActivity userId={profile.id} />
     </div>
   );
 }

@@ -1,5 +1,7 @@
 import { getItem, setItem } from './storage';
 import { getRequestById } from './requestService';
+import { getUserById } from './userService';
+import { addNotification } from './notificationService';
 import { STORAGE_KEYS, DURATION_OPTIONS } from '../utils/constants';
 import { mockSessions } from '../data/sessions';
 import { sessionDateTime } from '../utils/dateTime';
@@ -82,6 +84,14 @@ export async function createSession({
   };
 
   saveSessions([...loadSessions(), newSession]);
+
+  const creator = await getUserById(creatorId);
+  await addNotification({
+    userId: teacherId === creatorId ? learnerId : teacherId,
+    message: `${creator?.name ?? 'Someone'} scheduled a session with you.`,
+    link: '/sessions',
+  });
+
   return newSession;
 }
 
@@ -108,5 +118,19 @@ export async function updateSessionStatus(sessionId, userId, action) {
   }
 
   saveSessions(all.map((s) => (s.id === sessionId ? updated : s)));
+
+  const actor = await getUserById(userId);
+  await addNotification({
+    userId: session.teacherId === userId ? session.learnerId : session.teacherId,
+    message: `${actor?.name ?? 'Someone'} ${
+      action === 'complete' ? 'marked a session as completed.' : 'cancelled a session.'
+    }`,
+    link: '/sessions',
+  });
+
   return updated;
+}
+
+export async function getSessionById(sessionId) {
+  return loadSessions().find((s) => s.id === sessionId) ?? null;
 }

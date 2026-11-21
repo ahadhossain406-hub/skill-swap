@@ -1,5 +1,6 @@
 import { getItem, setItem } from './storage';
 import { getUserById } from './userService';
+import { addNotification } from './notificationService';
 import { STORAGE_KEYS } from '../utils/constants';
 import { mockRequests } from '../data/requests';
 
@@ -62,6 +63,13 @@ export async function createRequest({ fromUser, toUserId, offeredSkillId, reques
   };
 
   saveRequests([...all, newRequest]);
+
+  await addNotification({
+    userId: toUserId,
+    message: `${fromUser.name} sent you a swap request.`,
+    link: '/requests',
+  });
+
   return newRequest;
 }
 
@@ -86,8 +94,18 @@ export async function updateRequestStatus(requestId, userId, action) {
 
   const updated = { ...request, status: rule.newStatus, respondedAt: new Date().toISOString() };
   saveRequests(all.map((r) => (r.id === requestId ? updated : r)));
+
+  const actor = await getUserById(userId);
+  const verbs = { accept: 'accepted', decline: 'declined', cancel: 'cancelled' };
+  await addNotification({
+    userId: action === 'cancel' ? request.toUserId : request.fromUserId,
+    message: `${actor?.name ?? 'Someone'} ${verbs[action]} ${action === 'cancel' ? 'their' : 'your'} swap request.`,
+    link: '/requests',
+  });
+
   return updated;
 }
+
 export async function getRequestById(requestId) {
   return loadRequests().find((r) => r.id === requestId) ?? null;
 }

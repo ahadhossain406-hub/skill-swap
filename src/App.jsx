@@ -15,6 +15,7 @@ import SessionRoomPage from './pages/SessionRoomPage';
 import RecordingsPage from './pages/RecordingsPage';
 import ProjectsPage from './pages/ProjectsPage';
 import ProjectDetailPage from './pages/ProjectDetailPage';
+import NotificationsPage from './pages/NotificationsPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 export default function App() {
@@ -40,6 +41,7 @@ export default function App() {
           <Route path="/recordings" element={<RecordingsPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/projects/:projectId" element={<ProjectDetailPage />} />
+          <Route path="/notifications" element={<NotificationsPage />} />
           <Route path="/users/:userId" element={<PublicProfilePage />} />
         </Route>
       </Route>

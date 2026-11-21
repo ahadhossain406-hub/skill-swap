@@ -5,6 +5,8 @@ export const STORAGE_KEYS = {
   SESSIONS: 'skillswap_sessions',
   RECORDINGS: 'skillswap_recordings',
   PROJECTS: 'skillswap_projects',
+  REVIEWS: 'skillswap_reviews',
+  NOTIFICATIONS: 'skillswap_notifications',
 };
 
 export const SKILL_LEVELS = ['Beginner', 'Intermediate', 'Advanced'];

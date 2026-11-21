@@ -1,5 +1,6 @@
-import { NavLink, Outlet, useNavigate } from 'react-router-dom';
+import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom';
 import {
+  Bell,
   CalendarDays,
   Compass,
   Film,
@@ -14,6 +15,7 @@ import Logo from '../common/Logo';
 import Avatar from '../common/Avatar';
 import Button from '../common/Button';
 import { useAuth } from '../../context/AuthContext';
+import { useNotifications } from '../../context/NotificationsContext';
 import { useRequests } from '../../context/RequestsContext';
 import { useToast } from '../../context/ToastContext';
 
@@ -32,6 +34,7 @@ const navItems = [
 export default function DashboardLayout() {
   const { user, logout } = useAuth();
   const { pendingReceivedCount } = useRequests();
+  const { unreadCount } = useNotifications();
   const { showToast } = useToast();
   const navigate = useNavigate();
 
@@ -47,6 +50,18 @@ export default function DashboardLayout() {
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
           <Logo />
           <div className="flex items-center gap-3">
+            <Link
+              to="/notifications"
+              aria-label="Notifications"
+              className="relative rounded-lg p-2 text-slate-600 hover:bg-slate-100"
+            >
+              <Bell className="h-5 w-5" />
+              {unreadCount > 0 && (
+                <span className="absolute -right-0.5 -top-0.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-red-500 px-1 text-[10px] font-bold text-white">
+                  {unreadCount}
+                </span>
+              )}
+            </Link>
             <div className="hidden items-center gap-2 sm:flex">
               <Avatar name={user.name} color={user.avatarColor} size="sm" />
               <span className="text-sm font-medium">{user.name}</span>
