@@ -1,5 +1,13 @@
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
-import { Compass, Handshake, Inbox, LayoutDashboard, LogOut, User } from 'lucide-react';
+import {
+  CalendarDays,
+  Compass,
+  Handshake,
+  Inbox,
+  LayoutDashboard,
+  LogOut,
+  User,
+} from 'lucide-react';
 import Logo from '../common/Logo';
 import Avatar from '../common/Avatar';
 import Button from '../common/Button';
@@ -13,6 +21,7 @@ const navItems = [
   { to: '/explore', label: 'Explore', icon: Compass },
   { to: '/matches', label: 'My Matches', icon: Handshake },
   { to: '/requests', label: 'Requests', icon: Inbox, showBadge: true },
+  { to: '/sessions', label: 'Sessions', icon: CalendarDays },
   { to: '/profile', label: 'My Profile', icon: User },
 ];
 

@@ -88,3 +88,6 @@ export async function updateRequestStatus(requestId, userId, action) {
   saveRequests(all.map((r) => (r.id === requestId ? updated : r)));
   return updated;
 }
+export async function getRequestById(requestId) {
+  return loadRequests().find((r) => r.id === requestId) ?? null;
+}

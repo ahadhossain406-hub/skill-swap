@@ -5,7 +5,7 @@ import Avatar from '../common/Avatar';
 import Button from '../common/Button';
 import { useSkills } from '../../context/SkillsContext';
 import { formatDate } from '../../utils/formatDate';
-
+import ScheduleSessionButton from '../sessions/ScheduleSessionButton';
 const statusStyles = {
   pending: 'bg-amber-100 text-amber-700',
   accepted: 'bg-green-100 text-green-700',
@@ -89,6 +89,11 @@ export default function RequestCard({
 
       {request.message && (
         <p className="mt-3 text-sm italic text-slate-600">&ldquo;{request.message}&rdquo;</p>
+      )}
+      {request.status === 'accepted' && (
+        <div className="mt-4">
+          <ScheduleSessionButton requestId={request.id} />
+        </div>
       )}
 
       {!isPending && request.respondedAt && (

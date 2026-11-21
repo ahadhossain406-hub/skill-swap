@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App.jsx';
 import { AuthProvider } from './context/AuthContext.jsx';
 import { RequestsProvider } from './context/RequestsContext.jsx';
+import { SessionsProvider } from './context/SessionsContext.jsx';
 import { SkillsProvider } from './context/SkillsContext.jsx';
 import { ToastProvider } from './context/ToastContext.jsx';
 import './index.css';
@@ -15,7 +16,9 @@ createRoot(document.getElementById('root')).render(
         <AuthProvider>
           <SkillsProvider>
             <RequestsProvider>
-              <App />
+              <SessionsProvider>
+                <App />
+              </SessionsProvider>
             </RequestsProvider>
           </SkillsProvider>
         </AuthProvider>
