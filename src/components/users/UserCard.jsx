@@ -3,7 +3,7 @@ import { MapPin, Sparkles } from 'lucide-react';
 import Avatar from '../common/Avatar';
 import SkillTag from '../skills/SkillTag';
 import { useSkills } from '../../context/SkillsContext';
-
+import SendRequestButton from '../requests/SendRequestButton';
 const MAX_TAGS = 3;
 
 // match   = getMatchInfo() er result (na dile badge/swap dekhabe na)
@@ -87,12 +87,15 @@ export default function UserCard({ user, match = null, showSwap = false }) {
         </div>
       )}
 
-      <Link
-        to={`/users/${user.id}`}
-        className="mt-4 inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
-      >
-        View profile
-      </Link>
+            <div className="mt-4 flex gap-2">
+        <Link
+          to={`/users/${user.id}`}
+          className="inline-flex flex-1 items-center justify-center rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
+        >
+          View profile
+        </Link>
+        <SendRequestButton targetUser={user} className="flex-1" />
+      </div>
     </div>
   );
 }

@@ -9,6 +9,7 @@ import ProfilePage from './pages/ProfilePage';
 import ExplorePage from './pages/ExplorePage';
 import MatchesPage from './pages/MatchesPage';
 import PublicProfilePage from './pages/PublicProfilePage';
+import RequestsPage from './pages/RequestsPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 export default function App() {
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/explore" element={<ExplorePage />} />
           <Route path="/matches" element={<MatchesPage />} />
+          <Route path="/requests" element={<RequestsPage />} />
           <Route path="/users/:userId" element={<PublicProfilePage />} />
         </Route>
       </Route>

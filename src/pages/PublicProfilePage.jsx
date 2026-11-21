@@ -8,7 +8,7 @@ import * as userService from '../services/userService';
 import { useAuth } from '../context/AuthContext';
 import { useSkills } from '../context/SkillsContext';
 import { getMatchInfo } from '../utils/matchingAlgorithm';
-
+import SendRequestButton from '../components/requests/SendRequestButton';
 export default function PublicProfilePage() {
   const { userId } = useParams(); // URL theke /users/:userId er userId
   const id = Number(userId);
@@ -77,7 +77,10 @@ export default function PublicProfilePage() {
           </div>
         </div>
         <p className="mt-4 text-slate-700">{profile.bio || 'This user has not written a bio yet.'}</p>
-      </section>
+        <div className="mt-4">
+          <SendRequestButton targetUser={profile} />
+        </div>      
+        </section>
 
       <section
         className={`rounded-2xl border p-6 ${

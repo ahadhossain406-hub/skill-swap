@@ -1,6 +1,7 @@
 export const STORAGE_KEYS = {
   USERS: 'skillswap_users',
   CURRENT_USER_ID: 'skillswap_current_user_id',
+  REQUESTS: 'skillswap_requests',
 };
 
 export const SKILL_LEVELS = ['Beginner', 'Intermediate', 'Advanced'];
