@@ -1,5 +1,5 @@
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
-import { LayoutDashboard, LogOut, User } from 'lucide-react';
+import { Compass, Handshake, LayoutDashboard, LogOut, User } from 'lucide-react';
 import Logo from '../common/Logo';
 import Avatar from '../common/Avatar';
 import Button from '../common/Button';
@@ -9,6 +9,8 @@ import { useToast } from '../../context/ToastContext';
 // Sidebar-er menu. Notun page add korle ekhane ekta line jorbo.
 const navItems = [
   { to: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
+  { to: '/explore', label: 'Explore', icon: Compass },
+  { to: '/matches', label: 'My Matches', icon: Handshake },
   { to: '/profile', label: 'My Profile', icon: User },
 ];
 

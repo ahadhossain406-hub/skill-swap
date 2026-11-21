@@ -6,6 +6,9 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import DashboardPage from './pages/DashboardPage';
 import ProfilePage from './pages/ProfilePage';
+import ExplorePage from './pages/ExplorePage';
+import MatchesPage from './pages/MatchesPage';
+import PublicProfilePage from './pages/PublicProfilePage';
 import NotFoundPage from './pages/NotFoundPage';
 
 export default function App() {
@@ -21,6 +24,9 @@ export default function App() {
         <Route element={<DashboardLayout />}>
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/explore" element={<ExplorePage />} />
+          <Route path="/matches" element={<MatchesPage />} />
+          <Route path="/users/:userId" element={<PublicProfilePage />} />
         </Route>
       </Route>
 
