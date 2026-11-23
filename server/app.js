@@ -5,6 +5,8 @@ import { env } from './config/env.js';
 import { errorHandler, notFoundHandler } from './middleware/errorHandler.js';
 import authRoutes from './routes/authRoutes.js';
 import healthRoutes from './routes/healthRoutes.js';
+import skillRoutes from './routes/skillRoutes.js';
+import userRoutes from './routes/userRoutes.js';
 
 const app = express();
 
@@ -16,6 +18,8 @@ app.use(morgan('dev'));
 // Routes
 app.use('/api/health', healthRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/skills', skillRoutes);
+app.use('/api/users', userRoutes);
 
 // Shob route-er niche: na mile 404, error hole error handler
 app.use(notFoundHandler);
