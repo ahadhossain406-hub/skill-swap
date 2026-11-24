@@ -6,6 +6,8 @@ import { errorHandler, notFoundHandler } from './middleware/errorHandler.js';
 import authRoutes from './routes/authRoutes.js';
 import healthRoutes from './routes/healthRoutes.js';
 import matchRoutes from './routes/matchRoutes.js';
+import notificationRoutes from './routes/notificationRoutes.js';
+import requestRoutes from './routes/requestRoutes.js';
 import skillRoutes from './routes/skillRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 
@@ -22,6 +24,8 @@ app.use('/api/auth', authRoutes);
 app.use('/api/skills', skillRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/matches', matchRoutes);
+app.use('/api/notifications', notificationRoutes);
+app.use('/api/requests', requestRoutes);
 
 // Shob route-er niche: na mile 404, error hole error handler
 app.use(notFoundHandler);
