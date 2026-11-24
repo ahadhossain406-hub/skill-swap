@@ -10,9 +10,25 @@ export function errorHandler(err, req, res, next) {
     return res.status(400).json({ message: 'Invalid JSON in request body.' });
   }
 
+  // Multer (file upload) error.
+  if (err.name === 'MulterError') {
+    if (err.code === 'LIMIT_FILE_SIZE') {
+      return res.status(413).json({ message: 'The video file is too large (maximum 200 MB).' });
+    }
+    if (err.code === 'LIMIT_UNEXPECTED_FILE') {
+      return res.status(400).json({ message: 'Send the video in a form field named "video".' });
+    }
+    return res.status(400).json({ message: err.message });
+  }
+
   // MySQL: unique column-e duplicate (jemon same email).
   if (err.code === 'ER_DUP_ENTRY') {
     return res.status(409).json({ message: 'This record already exists.' });
+  }
+
+  // MySQL: je id-ke point kora hocche seta database-e nai.
+  if (err.code === 'ER_NO_REFERENCED_ROW_2') {
+    return res.status(400).json({ message: 'A related record does not exist.' });
   }
 
   const status = err.statusCode || 500;
