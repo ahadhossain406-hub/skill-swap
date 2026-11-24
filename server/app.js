@@ -7,6 +7,7 @@ import authRoutes from './routes/authRoutes.js';
 import healthRoutes from './routes/healthRoutes.js';
 import matchRoutes from './routes/matchRoutes.js';
 import notificationRoutes from './routes/notificationRoutes.js';
+import projectRoutes from './routes/projectRoutes.js';
 import requestRoutes from './routes/requestRoutes.js';
 import reviewRoutes from './routes/reviewRoutes.js';
 import sessionRoutes from './routes/sessionRoutes.js';
@@ -30,6 +31,7 @@ app.use('/api/notifications', notificationRoutes);
 app.use('/api/requests', requestRoutes);
 app.use('/api/sessions', sessionRoutes);
 app.use('/api/reviews', reviewRoutes);
+app.use('/api/projects', projectRoutes);
 
 // Shob route-er niche: na mile 404, error hole error handler
 app.use(notFoundHandler);
