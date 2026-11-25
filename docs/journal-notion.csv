@@ -1,4 +1,3 @@
-
 Name,Date,Member,Part,Details,Hours,Status
 "Planning and project setup",2026-11-17,MD. Ahad Hossain,Part 1,"Wrote the three-part plan, chose the technology stack and folder structure, created the React project (Vite, Tailwind CSS, React Router, Axios, Lucide React, Recharts), added mock data and the storage helper.",,Done
 "Landing page, login and profile",2026-11-18,MD. Ahad Hossain,Part 1,"Built the landing page, register and login with validation, protected routes, toast messages, the profile page and skills to teach and learn. First push to GitHub.",,Done
