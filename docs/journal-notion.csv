@@ -1,0 +1,16 @@
+
+Name,Date,Member,Part,Details,Hours,Status
+"Planning and project setup",2026-11-17,MD. Ahad Hossain,Part 1,"Wrote the three-part plan, chose the technology stack and folder structure, created the React project (Vite, Tailwind CSS, React Router, Axios, Lucide React, Recharts), added mock data and the storage helper.",,Done
+"Landing page, login and profile",2026-11-18,MD. Ahad Hossain,Part 1,"Built the landing page, register and login with validation, protected routes, toast messages, the profile page and skills to teach and learn. First push to GitHub.",,Done
+"Explore, matching and swap requests",2026-11-19,MD. Ahad Hossain,Part 1,"Supervisor feedback received (video sessions, recordings, project sharing, contribution tracking). Built Explore, public profile, mutual match algorithm with score, and swap requests.",,Done
+"Sessions, live room and recordings",2026-11-20,MD. Ahad Hossain,Part 1,"Built session scheduling, the live session room (camera, microphone, screen sharing, recording) and the Recordings page.",,Done
+"Projects, teams and contribution tracker",2026-11-21,MD. Ahad Hossain,Part 1,"Built the project showcase, teams and the contribution tracker with chart and timeline. Fixed a blank-screen bug caused by a missing icon.",,Done
+"Reviews, notifications and dashboard",2026-11-22,MD. Ahad Hossain,Part 1,"Finished reviews and ratings, notifications, the dashboard with charts and the profile activity section. Part 1 completed. Installed MySQL on macOS.",,Done
+"Backend setup and database",2026-11-22,MD. Ahad Hossain,Part 2,"Created the Express server and MySQL connection, designed 15 tables, wrote the schema and seed script with bcrypt, added a cross-platform setup script, added Zisan as collaborator.",,Done
+"Windows setup and auth API",2026-11-23,Zisan Ahmed,Part 2,"Installed MySQL on Windows, cloned the repository, set up the backend. Branch backend-auth: register, login (bcrypt and JWT), auth middleware, users, skills and matching APIs. Pull request opened.",,Done
+"Review and merge auth API",2026-11-23,MD. Ahad Hossain,Part 2,"Reviewed and merged the pull request, pulled the code and tested the API on macOS.",,Done
+"Requests, sessions, reviews and notifications API",2026-11-24,Zisan Ahmed,Part 2,"Branch backend-requests: notifications, swap requests, sessions and reviews APIs. Pull request opened.",,Done
+"Projects and recording upload API",2026-11-24,Zisan Ahmed,Part 2,"Branch backend-projects: projects, comments, team members, contribution tracker, recording upload with multer, backend README. Pull request opened.",,Done
+"Merge API and write documents",2026-11-24,MD. Ahad Hossain,Part 2,"Merged the pull requests and tested the API. Part 2 completed. Wrote the SRS, system design document, README and journal.",,Done
+"Show the work in class",2026-11-25,MD. Ahad Hossain and Zisan Ahmed,Part 3,"Demonstration of the frontend prototype, the backend API and the documents.",,Planned
+"Integration and deployment",2026-11-26,MD. Ahad Hossain and Zisan Ahmed,Part 3,"Connect frontend to API with Axios, replace mock services, upload recordings, add Jitsi video, test, deploy and add the live link to the README.",,Planned
