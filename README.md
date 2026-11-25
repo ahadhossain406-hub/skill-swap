@@ -70,8 +70,8 @@ At the moment the frontend still uses mock data stored in the browser. Part 3 re
 
 | Member | Student ID | GitHub |
 |---|---|---|
-| MD. Ahad Hossain | [Student ID] | [@username] |
-| Zisan Ahmed | [Student ID] | [@username] |
+| MD. Ahad Hossain | [232-35-406] | [@ahadhossain406-hub] |
+| Zisan Ahmed | [232-35-007] | [@zisanX007] |
 
 ### Contribution by part
 
